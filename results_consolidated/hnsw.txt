@@ -1,0 +1,488 @@
+ALGORITMO: HNSW
+Total de experimentos: 18
+
+==================================================
+Experimento 1/18 — 100pct — fiqa_minilm_128_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.15%
+Recall@5:       32.93%
+Recall@10:      39.43%
+MRR:            41.57%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.18 ms
+P95:            0.36 ms
+P99:            0.7 ms
+
+── Recursos ────────────────────────────────
+CPU média:      400.43% (100.1% do limite)
+CPU pico:       571.6% (142.9% do limite)
+Memória média:  135.66 MB
+Memória pico:   149.81 MB
+
+==================================================
+Experimento 2/18 — 100pct — fiqa_minilm_384_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.73%
+Recall@5:       36.04%
+Recall@10:      42.96%
+MRR:            44.18%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.23 ms
+P95:            0.33 ms
+P99:            0.44 ms
+
+── Recursos ────────────────────────────────
+CPU média:      402.19% (100.5% do limite)
+CPU pico:       520.2% (130.1% do limite)
+Memória média:  225.01 MB
+Memória pico:   262.37 MB
+
+==================================================
+Experimento 3/18 — 100pct — fiqa_minilm_64_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       13.64%
+Recall@5:       28.39%
+Recall@10:      36.06%
+MRR:            36.22%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.09 ms
+P95:            0.14 ms
+P99:            0.19 ms
+
+── Recursos ────────────────────────────────
+CPU média:      397.66% (99.4% do limite)
+CPU pico:       487.6% (121.9% do limite)
+Memória média:  101.46 MB
+Memória pico:   110.43 MB
+
+==================================================
+Experimento 4/18 — 100pct — msmarco_minilm_128_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       55.37%
+Recall@5:       83.47%
+Recall@10:      90.03%
+MRR:            69.80%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.13 ms
+P95:            0.26 ms
+P99:            0.37 ms
+
+── Recursos ────────────────────────────────
+CPU média:      295.73% (73.9% do limite)
+CPU pico:       497.9% (124.5% do limite)
+Memória média:  235.29 MB
+Memória pico:   259.45 MB
+
+==================================================
+Experimento 5/18 — 100pct — msmarco_minilm_384_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       56.91%
+Recall@5:       84.97%
+Recall@10:      91.24%
+MRR:            71.34%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.25 ms
+P95:            0.42 ms
+P99:            0.58 ms
+
+── Recursos ────────────────────────────────
+CPU média:      323.67% (80.9% do limite)
+CPU pico:       590.7% (147.7% do limite)
+Memória média:  466.4 MB
+Memória pico:   530.37 MB
+
+==================================================
+Experimento 6/18 — 100pct — msmarco_minilm_64_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       50.42%
+Recall@5:       78.53%
+Recall@10:      85.71%
+MRR:            64.77%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.09 ms
+P95:            0.16 ms
+P99:            0.22 ms
+
+── Recursos ────────────────────────────────
+CPU média:      279.09% (69.8% do limite)
+CPU pico:       515.9% (129.0% do limite)
+Memória média:  178.25 MB
+Memória pico:   193.5 MB
+
+==================================================
+Experimento 7/18 — 100pct — scifact_minilm_128_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       44.94%
+Recall@5:       66.64%
+Recall@10:      74.10%
+MRR:            55.75%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.05 ms
+P95:            0.09 ms
+P99:            0.14 ms
+
+── Recursos ────────────────────────────────
+CPU média:      358.47% (89.6% do limite)
+CPU pico:       677.4% (169.3% do limite)
+Memória média:  104.58 MB
+Memória pico:   104.62 MB
+
+==================================================
+Experimento 8/18 — 100pct — scifact_minilm_384_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       47.39%
+Recall@5:       70.76%
+Recall@10:      78.33%
+MRR:            59.46%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.12 ms
+P95:            0.2 ms
+P99:            0.29 ms
+
+── Recursos ────────────────────────────────
+CPU média:      336.33% (84.1% do limite)
+CPU pico:       497.6% (124.4% do limite)
+Memória média:  105.57 MB
+Memória pico:   105.6 MB
+
+==================================================
+Experimento 9/18 — 100pct — scifact_minilm_64_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       35.28%
+Recall@5:       58.04%
+Recall@10:      68.16%
+MRR:            46.41%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.04 ms
+P95:            0.06 ms
+P99:            0.13 ms
+
+── Recursos ────────────────────────────────
+CPU média:      308.73% (77.2% do limite)
+CPU pico:       567.7% (141.9% do limite)
+Memória média:  104.55 MB
+Memória pico:   104.62 MB
+
+==================================================
+Experimento 10/18 — 50pct — fiqa_minilm_128_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.31%
+Recall@5:       33.08%
+Recall@10:      39.58%
+MRR:            41.73%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.12 ms
+P95:            0.21 ms
+P99:            0.29 ms
+
+── Recursos ────────────────────────────────
+CPU média:      203.6% (101.8% do limite)
+CPU pico:       348.6% (174.3% do limite)
+Memória média:  136.9 MB
+Memória pico:   151.51 MB
+
+==================================================
+Experimento 11/18 — 50pct — fiqa_minilm_384_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.73%
+Recall@5:       36.04%
+Recall@10:      42.96%
+MRR:            44.18%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.23 ms
+P95:            0.39 ms
+P99:            0.53 ms
+
+── Recursos ────────────────────────────────
+CPU média:      204.87% (102.4% do limite)
+CPU pico:       342.8% (171.4% do limite)
+Memória média:  225.59 MB
+Memória pico:   263.99 MB
+
+==================================================
+Experimento 12/18 — 50pct — fiqa_minilm_64_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       13.64%
+Recall@5:       28.39%
+Recall@10:      36.04%
+MRR:            36.22%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.09 ms
+P95:            0.16 ms
+P99:            0.22 ms
+
+── Recursos ────────────────────────────────
+CPU média:      202.8% (101.4% do limite)
+CPU pico:       286.7% (143.3% do limite)
+Memória média:  103.39 MB
+Memória pico:   112.29 MB
+
+==================================================
+Experimento 13/18 — 50pct — msmarco_minilm_128_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       55.37%
+Recall@5:       83.49%
+Recall@10:      90.05%
+MRR:            69.81%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.13 ms
+P95:            0.21 ms
+P99:            0.28 ms
+
+── Recursos ────────────────────────────────
+CPU média:      180.73% (90.4% do limite)
+CPU pico:       328.7% (164.3% do limite)
+Memória média:  232.51 MB
+Memória pico:   261.14 MB
+
+==================================================
+Experimento 14/18 — 50pct — msmarco_minilm_384_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       56.91%
+Recall@5:       84.98%
+Recall@10:      91.26%
+MRR:            71.35%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.25 ms
+P95:            0.41 ms
+P99:            0.53 ms
+
+── Recursos ────────────────────────────────
+CPU média:      186.92% (93.5% do limite)
+CPU pico:       347.8% (173.9% do limite)
+Memória média:  459.91 MB
+Memória pico:   530.71 MB
+
+==================================================
+Experimento 15/18 — 50pct — msmarco_minilm_64_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       50.42%
+Recall@5:       78.53%
+Recall@10:      85.72%
+MRR:            64.77%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.09 ms
+P95:            0.14 ms
+P99:            0.19 ms
+
+── Recursos ────────────────────────────────
+CPU média:      176.82% (88.4% do limite)
+CPU pico:       286.0% (143.0% do limite)
+Memória média:  177.01 MB
+Memória pico:   194.9 MB
+
+==================================================
+Experimento 16/18 — 50pct — scifact_minilm_128_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       44.94%
+Recall@5:       66.64%
+Recall@10:      74.10%
+MRR:            55.75%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.05 ms
+P95:            0.11 ms
+P99:            0.15 ms
+
+── Recursos ────────────────────────────────
+CPU média:      183.24% (91.6% do limite)
+CPU pico:       302.4% (151.2% do limite)
+Memória média:  110.37 MB
+Memória pico:   110.39 MB
+
+==================================================
+Experimento 17/18 — 50pct — scifact_minilm_384_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       47.39%
+Recall@5:       70.76%
+Recall@10:      78.33%
+MRR:            59.46%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.11 ms
+P95:            0.25 ms
+P99:            0.42 ms
+
+── Recursos ────────────────────────────────
+CPU média:      180.27% (90.1% do limite)
+CPU pico:       228.4% (114.2% do limite)
+Memória média:  111.36 MB
+Memória pico:   111.38 MB
+
+==================================================
+Experimento 18/18 — 50pct — scifact_minilm_64_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       35.28%
+Recall@5:       58.04%
+Recall@10:      68.16%
+MRR:            46.41%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.04 ms
+P95:            0.06 ms
+P99:            0.11 ms
+
+── Recursos ────────────────────────────────
+CPU média:      170.68% (85.3% do limite)
+CPU pico:       265.7% (132.8% do limite)
+Memória média:  110.36 MB
+Memória pico:   110.39 MB

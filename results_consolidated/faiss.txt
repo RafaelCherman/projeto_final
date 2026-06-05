@@ -1,0 +1,1460 @@
+ALGORITMO: FAISS
+Total de experimentos: 54
+
+==================================================
+Experimento 1/54 — 100pct — fiqa_minilm_128_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.61%
+Recall@5:       33.55%
+Recall@10:      40.29%
+MRR:            42.10%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            2.14 ms
+P95:            2.66 ms
+P99:            3.03 ms
+
+── Recursos ────────────────────────────────
+CPU média:      94.17% (23.5% do limite)
+CPU pico:       109.4% (27.4% do limite)
+Memória média:  247.28 MB
+Memória pico:   250.03 MB
+
+==================================================
+Experimento 2/54 — 100pct — fiqa_minilm_128_ivf.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.24%
+Recall@5:       31.62%
+Recall@10:      38.41%
+MRR:            40.92%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.24 ms
+P95:            0.34 ms
+P99:            0.42 ms
+
+── Recursos ────────────────────────────────
+CPU média:      252.22% (63.1% do limite)
+CPU pico:       408.3% (102.1% do limite)
+Memória média:  248.39 MB
+Memória pico:   248.65 MB
+
+==================================================
+Experimento 3/54 — 100pct — fiqa_minilm_128_ivfpq.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       9.12%
+Recall@5:       22.95%
+Recall@10:      29.27%
+MRR:            27.98%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.21 ms
+P95:            0.26 ms
+P99:            0.36 ms
+
+── Recursos ────────────────────────────────
+CPU média:      361.62% (90.4% do limite)
+CPU pico:       408.3% (102.1% do limite)
+Memória média:  278.93 MB
+Memória pico:   504.65 MB
+
+==================================================
+Experimento 4/54 — 100pct — fiqa_minilm_384_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       17.20%
+Recall@5:       36.90%
+Recall@10:      43.77%
+MRR:            44.73%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            5.89 ms
+P95:            7.94 ms
+P99:            9.36 ms
+
+── Recursos ────────────────────────────────
+CPU média:      97.52% (24.4% do limite)
+CPU pico:       109.5% (27.4% do limite)
+Memória média:  369.87 MB
+Memória pico:   371.82 MB
+
+==================================================
+Experimento 5/54 — 100pct — fiqa_minilm_384_ivf.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       17.03%
+Recall@5:       34.69%
+Recall@10:      41.52%
+MRR:            43.34%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.76 ms
+P95:            0.98 ms
+P99:            1.2 ms
+
+── Recursos ────────────────────────────────
+CPU média:      239.75% (59.9% do limite)
+CPU pico:       368.6% (92.2% do limite)
+Memória média:  352.82 MB
+Memória pico:   371.82 MB
+
+==================================================
+Experimento 6/54 — 100pct — fiqa_minilm_384_ivfpq.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       8.41%
+Recall@5:       19.58%
+Recall@10:      26.69%
+MRR:            25.95%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.34 ms
+P95:            0.49 ms
+P99:            0.6 ms
+
+── Recursos ────────────────────────────────
+CPU média:      376.46% (94.1% do limite)
+CPU pico:       418.0% (104.5% do limite)
+Memória média:  406.13 MB
+Memória pico:   626.41 MB
+
+==================================================
+Experimento 7/54 — 100pct — fiqa_minilm_64_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       13.64%
+Recall@5:       28.47%
+Recall@10:      36.06%
+MRR:            36.27%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            1.08 ms
+P95:            1.32 ms
+P99:            1.68 ms
+
+── Recursos ────────────────────────────────
+CPU média:      88.19% (22.0% do limite)
+CPU pico:       109.2% (27.3% do limite)
+Memória média:  202.58 MB
+Memória pico:   202.58 MB
+
+==================================================
+Experimento 8/54 — 100pct — fiqa_minilm_64_ivf.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       13.45%
+Recall@5:       27.65%
+Recall@10:      34.67%
+MRR:            35.67%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.12 ms
+P95:            0.18 ms
+P99:            0.25 ms
+
+── Recursos ────────────────────────────────
+CPU média:      252.33% (63.1% do limite)
+CPU pico:       398.4% (99.6% do limite)
+Memória média:  207.79 MB
+Memória pico:   210.4 MB
+
+==================================================
+Experimento 9/54 — 100pct — fiqa_minilm_64_ivfpq.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       9.98%
+Recall@5:       22.52%
+Recall@10:      28.25%
+MRR:            28.73%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.13 ms
+P95:            0.18 ms
+P99:            0.25 ms
+
+── Recursos ────────────────────────────────
+CPU média:      355.5% (88.9% do limite)
+CPU pico:       418.0% (104.5% do limite)
+Memória média:  210.4 MB
+Memória pico:   210.4 MB
+
+==================================================
+Experimento 10/54 — 100pct — msmarco_minilm_128_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       56.03%
+Recall@5:       84.45%
+Recall@10:      91.13%
+MRR:            70.61%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            3.44 ms
+P95:            4.39 ms
+P99:            5.17 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.28% (25.1% do limite)
+CPU pico:       119.3% (29.8% do limite)
+Memória média:  275.16 MB
+Memória pico:   278.35 MB
+
+==================================================
+Experimento 11/54 — 100pct — msmarco_minilm_128_ivf.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       53.68%
+Recall@5:       80.60%
+Recall@10:      86.87%
+MRR:            67.62%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.4 ms
+P95:            0.55 ms
+P99:            0.67 ms
+
+── Recursos ────────────────────────────────
+CPU média:      103.14% (25.8% do limite)
+CPU pico:       398.2% (99.5% do limite)
+Memória média:  264.36 MB
+Memória pico:   284.84 MB
+
+==================================================
+Experimento 12/54 — 100pct — msmarco_minilm_128_ivfpq.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       40.65%
+Recall@5:       68.22%
+Recall@10:      76.97%
+MRR:            54.72%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.25 ms
+P95:            0.37 ms
+P99:            0.46 ms
+
+── Recursos ────────────────────────────────
+CPU média:      131.0% (32.8% do limite)
+CPU pico:       417.8% (104.5% do limite)
+Memória média:  273.06 MB
+Memória pico:   536.07 MB
+
+==================================================
+Experimento 13/54 — 100pct — msmarco_minilm_384_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       57.37%
+Recall@5:       85.74%
+Recall@10:      92.10%
+MRR:            71.96%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            10.0 ms
+P95:            12.38 ms
+P99:            14.91 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.03% (25.0% do limite)
+CPU pico:       119.5% (29.9% do limite)
+Memória média:  508.94 MB
+Memória pico:   518.07 MB
+
+==================================================
+Experimento 14/54 — 100pct — msmarco_minilm_384_ivf.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       54.75%
+Recall@5:       81.52%
+Recall@10:      87.55%
+MRR:            68.65%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            1.25 ms
+P95:            1.64 ms
+P99:            1.96 ms
+
+── Recursos ────────────────────────────────
+CPU média:      102.46% (25.6% do limite)
+CPU pico:       378.0% (94.5% do limite)
+Memória média:  569.09 MB
+Memória pico:   646.23 MB
+
+==================================================
+Experimento 15/54 — 100pct — msmarco_minilm_384_ivfpq.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       35.28%
+Recall@5:       61.23%
+Recall@10:      70.31%
+MRR:            48.47%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.37 ms
+P95:            0.53 ms
+P99:            0.64 ms
+
+── Recursos ────────────────────────────────
+CPU média:      183.99% (46.0% do limite)
+CPU pico:       418.3% (104.6% do limite)
+Memória média:  511.08 MB
+Memória pico:   887.35 MB
+
+==================================================
+Experimento 16/54 — 100pct — msmarco_minilm_64_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       50.98%
+Recall@5:       79.54%
+Recall@10:      86.93%
+MRR:            65.55%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            1.88 ms
+P95:            2.26 ms
+P99:            2.58 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.25% (25.1% do limite)
+CPU pico:       119.5% (29.9% do limite)
+Memória média:  259.71 MB
+Memória pico:   260.46 MB
+
+==================================================
+Experimento 17/54 — 100pct — msmarco_minilm_64_ivf.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       48.96%
+Recall@5:       75.91%
+Recall@10:      82.84%
+MRR:            62.85%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.22 ms
+P95:            0.32 ms
+P99:            0.43 ms
+
+── Recursos ────────────────────────────────
+CPU média:      103.12% (25.8% do limite)
+CPU pico:       388.5% (97.1% do limite)
+Memória média:  262.03 MB
+Memória pico:   262.04 MB
+
+==================================================
+Experimento 18/54 — 100pct — msmarco_minilm_64_ivfpq.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       39.72%
+Recall@5:       67.13%
+Recall@10:      75.74%
+MRR:            53.65%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.16 ms
+P95:            0.24 ms
+P99:            0.32 ms
+
+── Recursos ────────────────────────────────
+CPU média:      127.99% (32.0% do limite)
+CPU pico:       417.9% (104.5% do limite)
+Memória média:  262.05 MB
+Memória pico:   262.05 MB
+
+==================================================
+Experimento 19/54 — 100pct — scifact_minilm_128_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       45.28%
+Recall@5:       67.81%
+Recall@10:      76.10%
+MRR:            56.55%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.13 ms
+P95:            0.2 ms
+P99:            0.3 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  168.39 MB
+Memória pico:   168.39 MB
+
+==================================================
+Experimento 20/54 — 100pct — scifact_minilm_128_ivf.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       41.28%
+Recall@5:       60.48%
+Recall@10:      67.37%
+MRR:            51.38%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.03 ms
+P95:            0.06 ms
+P99:            0.1 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  168.39 MB
+Memória pico:   168.39 MB
+
+==================================================
+Experimento 21/54 — 100pct — scifact_minilm_128_ivfpq.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       28.11%
+Recall@5:       50.02%
+Recall@10:      59.63%
+MRR:            39.21%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.15 ms
+P95:            0.21 ms
+P99:            0.24 ms
+
+── Recursos ────────────────────────────────
+CPU média:      262.27% (65.6% do limite)
+CPU pico:       398.1% (99.5% do limite)
+Memória média:  176.71 MB
+Memória pico:   190.21 MB
+
+==================================================
+Experimento 22/54 — 100pct — scifact_minilm_384_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       47.72%
+Recall@5:       71.09%
+Recall@10:      78.67%
+MRR:            59.79%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.58 ms
+P95:            0.79 ms
+P99:            0.98 ms
+
+── Recursos ────────────────────────────────
+CPU média:      49.8% (12.4% do limite)
+CPU pico:       99.6% (24.9% do limite)
+Memória média:  206.46 MB
+Memória pico:   207.45 MB
+
+==================================================
+Experimento 23/54 — 100pct — scifact_minilm_384_ivf.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       43.39%
+Recall@5:       63.76%
+Recall@10:      70.50%
+MRR:            53.87%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.08 ms
+P95:            0.13 ms
+P99:            0.18 ms
+
+── Recursos ────────────────────────────────
+CPU média:      178.95% (44.7% do limite)
+CPU pico:       357.9% (89.5% do limite)
+Memória média:  205.48 MB
+Memória pico:   205.48 MB
+
+==================================================
+Experimento 24/54 — 100pct — scifact_minilm_384_ivfpq.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       26.01%
+Recall@5:       50.63%
+Recall@10:      57.59%
+MRR:            37.98%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.25 ms
+P95:            0.31 ms
+P99:            0.37 ms
+
+── Recursos ────────────────────────────────
+CPU média:      352.57% (88.1% do limite)
+CPU pico:       417.8% (104.5% do limite)
+Memória média:  205.48 MB
+Memória pico:   205.48 MB
+
+==================================================
+Experimento 25/54 — 100pct — scifact_minilm_64_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       35.61%
+Recall@5:       58.37%
+Recall@10:      68.16%
+MRR:            46.71%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.07 ms
+P95:            0.1 ms
+P99:            0.13 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  169.96 MB
+Memória pico:   169.96 MB
+
+==================================================
+Experimento 26/54 — 100pct — scifact_minilm_64_ivf.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       33.94%
+Recall@5:       54.37%
+Recall@10:      63.66%
+MRR:            43.98%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.03 ms
+P95:            0.05 ms
+P99:            0.08 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  169.96 MB
+Memória pico:   169.96 MB
+
+==================================================
+Experimento 27/54 — 100pct — scifact_minilm_64_ivfpq.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       24.97%
+Recall@5:       48.18%
+Recall@10:      57.07%
+MRR:            37.18%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.07 ms
+P95:            0.1 ms
+P99:            0.13 ms
+
+── Recursos ────────────────────────────────
+CPU média:      199.15% (49.8% do limite)
+CPU pico:       398.3% (99.6% do limite)
+Memória média:  169.96 MB
+Memória pico:   169.96 MB
+
+==================================================
+Experimento 28/54 — 50pct — fiqa_minilm_128_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.61%
+Recall@5:       33.55%
+Recall@10:      40.29%
+MRR:            42.10%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            2.49 ms
+P95:            3.28 ms
+P99:            3.59 ms
+
+── Recursos ────────────────────────────────
+CPU média:      94.23% (47.1% do limite)
+CPU pico:       109.5% (54.8% do limite)
+Memória média:  159.6 MB
+Memória pico:   160.5 MB
+
+==================================================
+Experimento 29/54 — 50pct — fiqa_minilm_128_ivf.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       16.24%
+Recall@5:       31.62%
+Recall@10:      38.41%
+MRR:            40.92%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.26 ms
+P95:            0.41 ms
+P99:            0.5 ms
+
+── Recursos ────────────────────────────────
+CPU média:      145.88% (72.9% do limite)
+CPU pico:       208.9% (104.5% do limite)
+Memória média:  168.48 MB
+Memória pico:   182.09 MB
+
+==================================================
+Experimento 30/54 — 50pct — fiqa_minilm_128_ivfpq.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       9.12%
+Recall@5:       22.95%
+Recall@10:      29.27%
+MRR:            27.98%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.21 ms
+P95:            0.3 ms
+P99:            0.38 ms
+
+── Recursos ────────────────────────────────
+CPU média:      187.33% (93.7% do limite)
+CPU pico:       209.0% (104.5% do limite)
+Memória média:  206.09 MB
+Memória pico:   438.09 MB
+
+==================================================
+Experimento 31/54 — 50pct — fiqa_minilm_384_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       17.20%
+Recall@5:       36.90%
+Recall@10:      43.77%
+MRR:            44.73%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            6.72 ms
+P95:            9.65 ms
+P99:            11.21 ms
+
+── Recursos ────────────────────────────────
+CPU média:      98.2% (49.1% do limite)
+CPU pico:       109.5% (54.8% do limite)
+Memória média:  302.05 MB
+Memória pico:   303.71 MB
+
+==================================================
+Experimento 32/54 — 50pct — fiqa_minilm_384_ivf.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       17.03%
+Recall@5:       34.69%
+Recall@10:      41.52%
+MRR:            43.34%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.86 ms
+P95:            1.3 ms
+P99:            1.53 ms
+
+── Recursos ────────────────────────────────
+CPU média:      140.61% (70.3% do limite)
+CPU pico:       189.1% (94.5% do limite)
+Memória média:  311.4 MB
+Memória pico:   342.66 MB
+
+==================================================
+Experimento 33/54 — 50pct — fiqa_minilm_384_ivfpq.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       8.41%
+Recall@5:       19.58%
+Recall@10:      26.69%
+MRR:            25.95%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.34 ms
+P95:            0.48 ms
+P99:            0.53 ms
+
+── Recursos ────────────────────────────────
+CPU média:      191.61% (95.8% do limite)
+CPU pico:       218.8% (109.4% do limite)
+Memória média:  379.68 MB
+Memória pico:   602.04 MB
+
+==================================================
+Experimento 34/54 — 50pct — fiqa_minilm_64_flat.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       13.64%
+Recall@5:       28.47%
+Recall@10:      36.06%
+MRR:            36.27%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            1.29 ms
+P95:            1.9 ms
+P99:            2.1 ms
+
+── Recursos ────────────────────────────────
+CPU média:      90.49% (45.2% do limite)
+CPU pico:       109.5% (54.8% do limite)
+Memória média:  154.04 MB
+Memória pico:   154.04 MB
+
+==================================================
+Experimento 35/54 — 50pct — fiqa_minilm_64_ivf.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       13.45%
+Recall@5:       27.65%
+Recall@10:      34.67%
+MRR:            35.67%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.13 ms
+P95:            0.2 ms
+P99:            0.28 ms
+
+── Recursos ────────────────────────────────
+CPU média:      129.33% (64.7% do limite)
+CPU pico:       198.9% (99.5% do limite)
+Memória média:  154.04 MB
+Memória pico:   154.04 MB
+
+==================================================
+Experimento 36/54 — 50pct — fiqa_minilm_64_ivfpq.json
+==================================================
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       9.98%
+Recall@5:       22.52%
+Recall@10:      28.25%
+MRR:            28.73%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.12 ms
+P95:            0.18 ms
+P99:            0.22 ms
+
+── Recursos ────────────────────────────────
+CPU média:      185.61% (92.8% do limite)
+CPU pico:       209.1% (104.5% do limite)
+Memória média:  154.04 MB
+Memória pico:   154.04 MB
+
+==================================================
+Experimento 37/54 — 50pct — msmarco_minilm_128_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       56.03%
+Recall@5:       84.45%
+Recall@10:      91.13%
+MRR:            70.61%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            3.65 ms
+P95:            4.87 ms
+P99:            5.69 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.28% (50.1% do limite)
+CPU pico:       119.3% (59.7% do limite)
+Memória média:  274.97 MB
+Memória pico:   278.29 MB
+
+==================================================
+Experimento 38/54 — 50pct — msmarco_minilm_128_ivf.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       53.68%
+Recall@5:       80.60%
+Recall@10:      86.87%
+MRR:            67.62%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.44 ms
+P95:            0.67 ms
+P99:            0.86 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.89% (50.4% do limite)
+CPU pico:       208.9% (104.5% do limite)
+Memória média:  265.08 MB
+Memória pico:   276.78 MB
+
+==================================================
+Experimento 39/54 — 50pct — msmarco_minilm_128_ivfpq.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       40.65%
+Recall@5:       68.22%
+Recall@10:      76.97%
+MRR:            54.72%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.26 ms
+P95:            0.42 ms
+P99:            0.52 ms
+
+── Recursos ────────────────────────────────
+CPU média:      114.98% (57.5% do limite)
+CPU pico:       209.0% (104.5% do limite)
+Memória média:  250.27 MB
+Memória pico:   536.94 MB
+
+==================================================
+Experimento 40/54 — 50pct — msmarco_minilm_384_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       57.37%
+Recall@5:       85.74%
+Recall@10:      92.10%
+MRR:            71.96%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            10.09 ms
+P95:            11.95 ms
+P99:            14.26 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.3% (50.1% do limite)
+CPU pico:       119.4% (59.7% do limite)
+Memória média:  509.03 MB
+Memória pico:   517.71 MB
+
+==================================================
+Experimento 41/54 — 50pct — msmarco_minilm_384_ivf.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       54.75%
+Recall@5:       81.52%
+Recall@10:      87.55%
+MRR:            68.65%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            1.26 ms
+P95:            1.64 ms
+P99:            1.92 ms
+
+── Recursos ────────────────────────────────
+CPU média:      101.02% (50.5% do limite)
+CPU pico:       218.9% (109.5% do limite)
+Memória média:  566.72 MB
+Memória pico:   705.75 MB
+
+==================================================
+Experimento 42/54 — 50pct — msmarco_minilm_384_ivfpq.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       35.28%
+Recall@5:       61.23%
+Recall@10:      70.31%
+MRR:            48.47%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.37 ms
+P95:            0.54 ms
+P99:            0.65 ms
+
+── Recursos ────────────────────────────────
+CPU média:      126.97% (63.5% do limite)
+CPU pico:       218.8% (109.4% do limite)
+Memória média:  534.63 MB
+Memória pico:   885.67 MB
+
+==================================================
+Experimento 43/54 — 50pct — msmarco_minilm_64_flat.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       50.98%
+Recall@5:       79.54%
+Recall@10:      86.93%
+MRR:            65.55%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            2.12 ms
+P95:            3.08 ms
+P99:            3.66 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.26% (50.1% do limite)
+CPU pico:       119.4% (59.7% do limite)
+Memória média:  230.76 MB
+Memória pico:   230.92 MB
+
+==================================================
+Experimento 44/54 — 50pct — msmarco_minilm_64_ivf.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       48.96%
+Recall@5:       75.91%
+Recall@10:      82.84%
+MRR:            62.85%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.23 ms
+P95:            0.38 ms
+P99:            0.49 ms
+
+── Recursos ────────────────────────────────
+CPU média:      100.89% (50.4% do limite)
+CPU pico:       199.0% (99.5% do limite)
+Memória média:  248.78 MB
+Memória pico:   249.04 MB
+
+==================================================
+Experimento 45/54 — 50pct — msmarco_minilm_64_ivfpq.json
+==================================================
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       39.72%
+Recall@5:       67.13%
+Recall@10:      75.74%
+MRR:            53.65%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.17 ms
+P95:            0.28 ms
+P99:            0.39 ms
+
+── Recursos ────────────────────────────────
+CPU média:      111.94% (56.0% do limite)
+CPU pico:       209.1% (104.5% do limite)
+Memória média:  249.05 MB
+Memória pico:   249.05 MB
+
+==================================================
+Experimento 46/54 — 50pct — scifact_minilm_128_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       45.28%
+Recall@5:       67.81%
+Recall@10:      76.10%
+MRR:            56.55%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.13 ms
+P95:            0.17 ms
+P99:            0.22 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  161.96 MB
+Memória pico:   161.96 MB
+
+==================================================
+Experimento 47/54 — 50pct — scifact_minilm_128_ivf.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       41.28%
+Recall@5:       60.48%
+Recall@10:      67.37%
+MRR:            51.38%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.04 ms
+P95:            0.06 ms
+P99:            0.09 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  161.97 MB
+Memória pico:   161.97 MB
+
+==================================================
+Experimento 48/54 — 50pct — scifact_minilm_128_ivfpq.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       28.11%
+Recall@5:       50.02%
+Recall@10:      59.63%
+MRR:            39.21%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.15 ms
+P95:            0.27 ms
+P99:            0.31 ms
+
+── Recursos ────────────────────────────────
+CPU média:      149.28% (74.6% do limite)
+CPU pico:       199.1% (99.5% do limite)
+Memória média:  161.97 MB
+Memória pico:   161.97 MB
+
+==================================================
+Experimento 49/54 — 50pct — scifact_minilm_384_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       47.72%
+Recall@5:       71.09%
+Recall@10:      78.67%
+MRR:            59.79%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.61 ms
+P95:            0.91 ms
+P99:            1.01 ms
+
+── Recursos ────────────────────────────────
+CPU média:      66.37% (33.2% do limite)
+CPU pico:       99.6% (49.8% do limite)
+Memória média:  151.74 MB
+Memória pico:   153.05 MB
+
+==================================================
+Experimento 50/54 — 50pct — scifact_minilm_384_ivf.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       43.39%
+Recall@5:       63.76%
+Recall@10:      70.50%
+MRR:            53.87%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.08 ms
+P95:            0.14 ms
+P99:            0.18 ms
+
+── Recursos ────────────────────────────────
+CPU média:      94.6% (47.3% do limite)
+CPU pico:       189.2% (94.6% do limite)
+Memória média:  151.09 MB
+Memória pico:   151.09 MB
+
+==================================================
+Experimento 51/54 — 50pct — scifact_minilm_384_ivfpq.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       26.01%
+Recall@5:       50.63%
+Recall@10:      57.59%
+MRR:            37.98%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.29 ms
+P95:            0.45 ms
+P99:            0.5 ms
+
+── Recursos ────────────────────────────────
+CPU média:      176.76% (88.4% do limite)
+CPU pico:       209.0% (104.5% do limite)
+Memória média:  152.76 MB
+Memória pico:   161.96 MB
+
+==================================================
+Experimento 52/54 — 50pct — scifact_minilm_64_flat.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       35.61%
+Recall@5:       58.37%
+Recall@10:      68.16%
+MRR:            46.71%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.07 ms
+P95:            0.11 ms
+P99:            0.15 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  161.97 MB
+Memória pico:   161.97 MB
+
+==================================================
+Experimento 53/54 — 50pct — scifact_minilm_64_ivf.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       33.94%
+Recall@5:       54.37%
+Recall@10:      63.66%
+MRR:            43.98%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.03 ms
+P95:            0.07 ms
+P99:            0.17 ms
+
+── Recursos ────────────────────────────────
+CPU média:      0.0% (0.0% do limite)
+CPU pico:       0.0% (0.0% do limite)
+Memória média:  161.97 MB
+Memória pico:   161.97 MB
+
+==================================================
+Experimento 54/54 — 50pct — scifact_minilm_64_ivfpq.json
+==================================================
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       24.97%
+Recall@5:       48.18%
+Recall@10:      57.07%
+MRR:            37.18%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.07 ms
+P95:            0.15 ms
+P99:            0.19 ms
+
+── Recursos ────────────────────────────────
+CPU média:      132.67% (66.3% do limite)
+CPU pico:       199.1% (99.5% do limite)
+Memória média:  161.97 MB
+Memória pico:   161.97 MB

@@ -1,0 +1,22 @@
+{
+  "algorithm": "faiss",
+  "dataset": "msmarco",
+  "model": "minilm",
+  "dimension": 64,
+  "technique": "ivf",
+  "resource_level": "50pct",
+  "metrics": {
+    "recall_at_1": 0.4896,
+    "recall_at_5": 0.7591,
+    "recall_at_10": 0.8284,
+    "mrr": 0.6285,
+    "latency_p50_ms": 0.23,
+    "latency_p95_ms": 0.38,
+    "latency_p99_ms": 0.49,
+    "num_queries": 78956,
+    "cpu_pct_mean": 100.89,
+    "cpu_pct_peak": 199.0,
+    "memory_mb_mean": 248.78,
+    "memory_mb_peak": 249.04
+  }
+}

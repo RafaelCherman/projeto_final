@@ -1,0 +1,23 @@
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       128
+Técnica:        IVFPQ
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       9.12%
+Recall@5:       22.95%
+Recall@10:      29.27%
+MRR:            27.98%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.21 ms
+P95:            0.26 ms
+P99:            0.36 ms
+
+── Recursos ────────────────────────────────
+CPU média:      361.62% (90.4% do limite)
+CPU pico:       408.3% (102.1% do limite)
+Memória média:  278.93 MB
+Memória pico:   504.65 MB

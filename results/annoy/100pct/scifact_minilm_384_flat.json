@@ -1,0 +1,22 @@
+{
+  "algorithm": "annoy",
+  "dataset": "scifact",
+  "model": "minilm",
+  "dimension": 384,
+  "technique": "flat",
+  "resource_level": "100pct",
+  "metrics": {
+    "recall_at_1": 0.4672,
+    "recall_at_5": 0.6709,
+    "recall_at_10": 0.7417,
+    "mrr": 0.5776,
+    "latency_p50_ms": 0.18,
+    "latency_p95_ms": 0.26,
+    "latency_p99_ms": 0.33,
+    "num_queries": 300,
+    "cpu_pct_mean": 212.35,
+    "cpu_pct_peak": 424.7,
+    "memory_mb_mean": 169.21,
+    "memory_mb_peak": 169.32
+  }
+}

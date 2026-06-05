@@ -1,0 +1,23 @@
+Dataset:        SCIFACT
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       46.72%
+Recall@5:       67.09%
+Recall@10:      74.17%
+MRR:            57.76%
+Queries:        300
+
+── Latência ────────────────────────────────
+P50:            0.18 ms
+P95:            0.25 ms
+P99:            0.31 ms
+
+── Recursos ────────────────────────────────
+CPU média:      134.2% (67.1% do limite)
+CPU pico:       243.3% (121.7% do limite)
+Memória média:  166.97 MB
+Memória pico:   167.04 MB

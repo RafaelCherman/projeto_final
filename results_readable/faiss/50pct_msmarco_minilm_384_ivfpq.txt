@@ -1,0 +1,23 @@
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVFPQ
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       35.28%
+Recall@5:       61.23%
+Recall@10:      70.31%
+MRR:            48.47%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.37 ms
+P95:            0.54 ms
+P99:            0.65 ms
+
+── Recursos ────────────────────────────────
+CPU média:      126.97% (63.5% do limite)
+CPU pico:       218.8% (109.4% do limite)
+Memória média:  534.63 MB
+Memória pico:   885.67 MB

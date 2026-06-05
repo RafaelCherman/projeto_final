@@ -1,0 +1,22 @@
+{
+  "algorithm": "annoy",
+  "dataset": "msmarco",
+  "model": "minilm",
+  "dimension": 384,
+  "technique": "flat",
+  "resource_level": "50pct",
+  "metrics": {
+    "recall_at_1": 0.4994,
+    "recall_at_5": 0.7331,
+    "recall_at_10": 0.7855,
+    "mrr": 0.6244,
+    "latency_p50_ms": 0.41,
+    "latency_p95_ms": 0.56,
+    "latency_p99_ms": 0.66,
+    "num_queries": 78956,
+    "cpu_pct_mean": 150.61,
+    "cpu_pct_peak": 389.4,
+    "memory_mb_mean": 650.33,
+    "memory_mb_peak": 710.96
+  }
+}

@@ -1,0 +1,23 @@
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        IVF
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       48.96%
+Recall@5:       75.91%
+Recall@10:      82.84%
+MRR:            62.85%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.22 ms
+P95:            0.32 ms
+P99:            0.43 ms
+
+── Recursos ────────────────────────────────
+CPU média:      103.12% (25.8% do limite)
+CPU pico:       388.5% (97.1% do limite)
+Memória média:  262.03 MB
+Memória pico:   262.04 MB

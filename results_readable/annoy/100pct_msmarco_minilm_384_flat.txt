@@ -1,0 +1,23 @@
+Dataset:        MSMARCO
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       49.94%
+Recall@5:       73.31%
+Recall@10:      78.55%
+MRR:            62.44%
+Queries:        78956
+
+── Latência ────────────────────────────────
+P50:            0.4 ms
+P95:            0.57 ms
+P99:            0.69 ms
+
+── Recursos ────────────────────────────────
+CPU média:      207.42% (51.9% do limite)
+CPU pico:       673.8% (168.4% do limite)
+Memória média:  655.45 MB
+Memória pico:   710.63 MB

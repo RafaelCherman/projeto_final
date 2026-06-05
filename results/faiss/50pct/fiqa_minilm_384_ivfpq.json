@@ -1,0 +1,22 @@
+{
+  "algorithm": "faiss",
+  "dataset": "fiqa",
+  "model": "minilm",
+  "dimension": 384,
+  "technique": "ivfpq",
+  "resource_level": "50pct",
+  "metrics": {
+    "recall_at_1": 0.0841,
+    "recall_at_5": 0.1958,
+    "recall_at_10": 0.2669,
+    "mrr": 0.2595,
+    "latency_p50_ms": 0.34,
+    "latency_p95_ms": 0.48,
+    "latency_p99_ms": 0.53,
+    "num_queries": 646,
+    "cpu_pct_mean": 191.61,
+    "cpu_pct_peak": 218.8,
+    "memory_mb_mean": 379.68,
+    "memory_mb_peak": 602.04
+  }
+}

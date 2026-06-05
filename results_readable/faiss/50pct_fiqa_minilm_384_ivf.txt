@@ -1,0 +1,23 @@
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       384
+Técnica:        IVF
+Recursos:       50pct
+
+── Relevância ──────────────────────────────
+Recall@1:       17.03%
+Recall@5:       34.69%
+Recall@10:      41.52%
+MRR:            43.34%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.86 ms
+P95:            1.3 ms
+P99:            1.53 ms
+
+── Recursos ────────────────────────────────
+CPU média:      140.61% (70.3% do limite)
+CPU pico:       189.1% (94.5% do limite)
+Memória média:  311.4 MB
+Memória pico:   342.66 MB

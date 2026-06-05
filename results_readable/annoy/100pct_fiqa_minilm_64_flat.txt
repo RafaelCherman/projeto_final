@@ -1,0 +1,23 @@
+Dataset:        FIQA
+Modelo:         MINILM
+Dimensão:       64
+Técnica:        FLAT
+Recursos:       100pct
+
+── Relevância ──────────────────────────────
+Recall@1:       12.96%
+Recall@5:       26.60%
+Recall@10:      33.05%
+MRR:            34.52%
+Queries:        646
+
+── Latência ────────────────────────────────
+P50:            0.19 ms
+P95:            0.24 ms
+P99:            0.32 ms
+
+── Recursos ────────────────────────────────
+CPU média:      362.3% (90.6% do limite)
+CPU pico:       457.8% (114.5% do limite)
+Memória média:  211.99 MB
+Memória pico:   265.12 MB
