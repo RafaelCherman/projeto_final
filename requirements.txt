@@ -1,0 +1,6 @@
+streamlit
+numpy
+pandas
+annoy==1.17.3
+faiss-cpu==1.7.4
+hnswlib==0.7.0
