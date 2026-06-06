@@ -1,0 +1,22 @@
+{
+  "algorithm": "faiss",
+  "dataset": "scifact",
+  "model": "minilm",
+  "dimension": 128,
+  "technique": "ivfpq",
+  "resource_level": "100pct",
+  "metrics": {
+    "recall_at_1": 0.2811,
+    "recall_at_5": 0.5002,
+    "recall_at_10": 0.5963,
+    "mrr": 0.3921,
+    "latency_p50_ms": 0.2,
+    "latency_p95_ms": 0.32,
+    "latency_p99_ms": 0.54,
+    "num_queries": 300,
+    "cpu_pct_mean": 273.65,
+    "cpu_pct_peak": 397.8,
+    "memory_mb_mean": 172.54,
+    "memory_mb_peak": 172.54
+  }
+}
