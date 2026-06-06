@@ -330,6 +330,8 @@ with tab2:
         recall_df = df_filtered.groupby(
             ["Algoritmo", "Dimensão"], as_index=False
         )["Recall@10"].mean()
+        
+        recall_df["Dimensão"] = recall_df["Dimensão"].astype(str)
 
         fig_recall = px.bar(
             recall_df,
