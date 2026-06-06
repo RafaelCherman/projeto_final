@@ -344,7 +344,7 @@ with tab2:
         )
 
         fig_recall.update_layout(
-            bargap=0.3,
+            bargap=0.05,
             bargroupgap=0.1,
             yaxis=dict(range=[0, 100]),
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
