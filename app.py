@@ -5,6 +5,7 @@ import os
 import random
 import time
 import pandas as pd
+import plotly.express as px
 
 # ── Configuração da página ─────────────────────────────────────────────────────
 st.set_page_config(
@@ -330,11 +331,28 @@ with tab2:
             ["Algoritmo", "Dimensão"], as_index=False
         )["Recall@10"].mean()
 
-        recall_pivot = recall_df.pivot(
-            index="Dimensão", columns="Algoritmo", values="Recall@10"
+        fig_recall = px.bar(
+            recall_df,
+            x="Dimensão",
+            y="Recall@10",
+            color="Algoritmo",
+            barmode="group",
+            text_auto=".1f",
+            labels={"Recall@10": "Recall@10 (%)", "Dimensão": "Dimensão"},
+            category_orders={"Dimensão": [64, 128, 384]},
+            height=450,
         )
 
-        st.bar_chart(recall_pivot)
+        fig_recall.update_layout(
+            bargap=0.3,
+            bargroupgap=0.1,
+            yaxis=dict(range=[0, 100]),
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        )
+
+        fig_recall.update_traces(width=0.2)
+
+        st.plotly_chart(fig_recall, use_container_width=True)
 
         st.divider()
 
@@ -345,11 +363,27 @@ with tab2:
             ["Algoritmo", "Técnica"], as_index=False
         )["P50 (ms)"].mean()
 
-        latency_pivot = latency_df.pivot(
-            index="Técnica", columns="Algoritmo", values="P50 (ms)"
+        fig_latency = px.bar(
+            latency_df,
+            x="Técnica",
+            y="P50 (ms)",
+            color="Algoritmo",
+            barmode="group",
+            text_auto=".2f",
+            labels={"P50 (ms)": "Latência P50 (ms)", "Técnica": "Técnica"},
+            category_orders={"Técnica": ["FLAT", "IVF", "IVFPQ"]},
+            height=450,
         )
 
-        st.bar_chart(latency_pivot)
+        fig_latency.update_layout(
+            bargap=0.3,
+            bargroupgap=0.1,
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        )
+
+        fig_latency.update_traces(width=0.2)
+
+        st.plotly_chart(fig_latency, use_container_width=True)
 
         st.divider()
 

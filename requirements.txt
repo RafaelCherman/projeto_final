@@ -4,3 +4,4 @@ pandas
 annoy
 faiss-cpu
 hnswlib
+plotly
