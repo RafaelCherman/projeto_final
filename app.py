@@ -281,6 +281,13 @@ with tab1:
                     else:
                         st.error(f"**#{rank} ❌ Não relevante** — `{doc_id}`\n\n{preview}")
 
+                corpus_embeddings, doc_ids = load_embeddings(dimension)
+                query_embs = load_query_embeddings(dimension)
+
+                st.write(f"Corpus shape: {corpus_embeddings.shape}")
+                st.write(f"Query vec shape: {list(query_embs.values())[0].shape}")
+                st.write(f"Corpus normalizado: {np.allclose(np.linalg.norm(corpus_embeddings[:5], axis=1), 1.0)}")
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ABA 2 — DASHBOARD
