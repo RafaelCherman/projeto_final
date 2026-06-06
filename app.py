@@ -350,7 +350,7 @@ with tab2:
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         )
 
-        fig_recall.update_traces(width=0.2)
+        fig_recall.update_traces(width=1)
 
         st.plotly_chart(fig_recall, use_container_width=True)
 
@@ -381,7 +381,7 @@ with tab2:
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         )
 
-        fig_latency.update_traces(width=0.2)
+        fig_latency.update_traces(width=1)
 
         st.plotly_chart(fig_latency, use_container_width=True)
 
