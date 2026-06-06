@@ -338,16 +338,13 @@ with tab2:
             color="Algoritmo",
             barmode="group",
             text_auto=".1f",
-            labels={"Recall@10": "Recall@10 (%)", "Dimensão": "Dimensão"},
-            category_orders={"Dimensão": [64, 128, 384]},
+            category_orders={"Dimensão": ["64", "128", "384"]},
             height=450,
         )
 
         fig_recall.update_layout(
             bargap=0.05,
-            bargroupgap=0.1,
-            yaxis=dict(range=[0, 100]),
-            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+            bargroupgap=0.0,
         )
 
         fig_recall.update_traces(width=1)
