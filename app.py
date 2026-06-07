@@ -245,17 +245,7 @@ with tab1:
                     current_qid, query_embeddings_map, doc_ids
                 )
 
-            relevant = qrels.get(current_qid, set())
-            hits     = sum(1 for d in retrieved if d in relevant)
-            recall   = hits / len(relevant) if relevant else 0
-
-            # Métricas
-            st.subheader("Métricas da Busca")
-            col1, col2, col3 = st.columns(3)
-            col1.metric("Latência",  f"{latency:.2f} ms")
-            col2.metric("Recall@10", f"{recall * 100:.2f}%")
-            col3.metric("Acertos",   f"{hits} / {len(relevant)}")
-
+            
             st.divider()
 
             # Resultados
@@ -270,7 +260,7 @@ with tab1:
                 else:
                     st.error(f"**#{rank} ❌ Não relevante** — `{doc_id}`\n\n{preview}")
             
-            st.caption(f"Documentos relevantes no gabarito: {len(relevant)}")
+          
 
 
 # ══════════════════════════════════════════════════════════════════════════════
