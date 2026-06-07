@@ -245,7 +245,12 @@ with tab1:
                     current_qid, query_embeddings_map, doc_ids
                 )
 
+            relevant = qrels.get(current_qid, set())
+            hits     = sum(1 for d in retrieved if d in relevant)
+            recall   = hits / len(relevant) if relevant else 0
+
             
+
             st.divider()
 
             # Resultados
