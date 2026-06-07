@@ -16,6 +16,7 @@ st.set_page_config(
 
 # ── Constantes ─────────────────────────────────────────────────────────────────
 DATA_DIR    = "./data/scifact"
+INDEXES_DIR = "./indexes/scifact"
 RESULTS_DIR = "./results"
 ALGORITHMS  = ["annoy", "faiss", "hnsw"]
 DIMENSIONS  = [384, 128, 64]
@@ -80,7 +81,7 @@ def load_embeddings(dimension: int):
 
 @st.cache_resource
 def load_query_embeddings(dimension: int):
-    emb_file = f"query_embeddings_minilm_{dimension}.npy"
+    emb_file   = f"query_embeddings_minilm_{dimension}.npy"
     embeddings = np.load(f"{DATA_DIR}/{emb_file}")
 
     query_ids = []
@@ -91,6 +92,38 @@ def load_query_embeddings(dimension: int):
     return {qid: emb for qid, emb in zip(query_ids, embeddings)}
 
 
+# ── Carregamento de índices pré-construídos (cache) ────────────────────────────
+@st.cache_resource
+def load_annoy_index(dimension: int):
+    from annoy import AnnoyIndex
+    index = AnnoyIndex(dimension, "angular")
+    index.load(f"{INDEXES_DIR}/annoy_{dimension}.ann")
+    return index
+
+
+@st.cache_resource
+def load_faiss_index(dimension: int, technique: str):
+    import faiss
+    index = faiss.read_index(f"{INDEXES_DIR}/faiss_{technique}_{dimension}.index")
+    if technique in ("ivf", "ivfpq"):
+        index.nprobe = 10
+    return index
+
+
+@st.cache_resource
+def load_hnsw_index(dimension: int):
+    import hnswlib
+    _, doc_ids = load_embeddings(dimension)
+    index      = hnswlib.Index(space="cosine", dim=dimension)
+    index.load_index(
+        f"{INDEXES_DIR}/hnsw_{dimension}.bin",
+        max_elements=len(doc_ids)
+    )
+    index.set_ef(50)
+    return index
+
+
+# ── Carregamento de resultados dos experimentos (cache) ────────────────────────
 @st.cache_resource
 def load_all_results():
     results = []
@@ -105,92 +138,50 @@ def load_all_results():
                 with open(os.path.join(level_dir, filename), encoding="utf-8") as f:
                     data = json.load(f)
                     results.append({
-                        "Algoritmo":   data["algorithm"].upper(),
-                        "Dataset":     data["dataset"].upper(),
-                        "Dimensão":    data["dimension"],
-                        "Técnica":     data["technique"].upper(),
-                        "Recursos":    data["resource_level"],
-                        "Recall@1":    round(data["metrics"]["recall_at_1"]  * 100, 2),
-                        "Recall@5":    round(data["metrics"]["recall_at_5"]  * 100, 2),
-                        "Recall@10":   round(data["metrics"]["recall_at_10"] * 100, 2),
-                        "MRR":         round(data["metrics"]["mrr"]          * 100, 2),
-                        "P50 (ms)":    data["metrics"]["latency_p50_ms"],
-                        "P95 (ms)":    data["metrics"]["latency_p95_ms"],
-                        "P99 (ms)":    data["metrics"]["latency_p99_ms"],
-                        "CPU média":   data["metrics"]["cpu_pct_mean"],
-                        "CPU pico":    data["metrics"]["cpu_pct_peak"],
-                        "Mem média":   data["metrics"]["memory_mb_mean"],
-                        "Mem pico":    data["metrics"]["memory_mb_peak"],
+                        "Algoritmo": data["algorithm"].upper(),
+                        "Dataset":   data["dataset"].upper(),
+                        "Dimensão":  data["dimension"],
+                        "Técnica":   data["technique"].upper(),
+                        "Recursos":  data["resource_level"],
+                        "Recall@1":  round(data["metrics"]["recall_at_1"]  * 100, 2),
+                        "Recall@5":  round(data["metrics"]["recall_at_5"]  * 100, 2),
+                        "Recall@10": round(data["metrics"]["recall_at_10"] * 100, 2),
+                        "MRR":       round(data["metrics"]["mrr"]          * 100, 2),
+                        "P50 (ms)":  data["metrics"]["latency_p50_ms"],
+                        "P95 (ms)":  data["metrics"]["latency_p95_ms"],
+                        "P99 (ms)":  data["metrics"]["latency_p99_ms"],
+                        "CPU média": data["metrics"]["cpu_pct_mean"],
+                        "CPU pico":  data["metrics"]["cpu_pct_peak"],
+                        "Mem média": data["metrics"]["memory_mb_mean"],
+                        "Mem pico":  data["metrics"]["memory_mb_peak"],
                     })
     return pd.DataFrame(results)
 
 
-# ── Funções de busca ───────────────────────────────────────────────────────────
-def search_annoy(query_vec, corpus_embeddings, doc_ids, k=10):
-    from annoy import AnnoyIndex
-    dim   = len(query_vec)
-    index = AnnoyIndex(dim, "angular")
-    for i, vec in enumerate(corpus_embeddings):
-        index.add_item(i, vec.tolist())
-    index.build(50)
-    indices = index.get_nns_by_vector(query_vec.tolist(), k)
-    return [doc_ids[i] for i in indices]
-
-
-def search_faiss(query_vec, corpus_embeddings, doc_ids, technique, k=10):
-    import faiss
-    dim        = len(query_vec)
-    embeddings = corpus_embeddings.astype("float32")
-    q          = np.array([query_vec], dtype="float32")
-
-    if technique == "flat":
-        index = faiss.IndexFlatIP(dim)
-        index.add(embeddings)
-
-    elif technique == "ivf":
-        quantizer = faiss.IndexFlatIP(dim)
-        index     = faiss.IndexIVFFlat(quantizer, dim, 50, faiss.METRIC_INNER_PRODUCT)
-        index.train(embeddings)
-        index.add(embeddings)
-        index.nprobe = 5
-
-    elif technique == "ivfpq":
-        m         = 8 if dim % 8 == 0 else dim // 8
-        quantizer = faiss.IndexFlatIP(dim)
-        index     = faiss.IndexIVFPQ(quantizer, dim, 50, m, 8)
-        index.train(embeddings)
-        index.add(embeddings)
-        index.nprobe = 5
-
-    _, I = index.search(q, k)
-    return [doc_ids[i] for i in I[0] if i != -1]
-
-
-def search_hnsw(query_vec, corpus_embeddings, doc_ids, k=10):
-    import hnswlib
-    dim   = len(query_vec)
-    n     = len(corpus_embeddings)
-    index = hnswlib.Index(space="cosine", dim=dim)
-    index.init_index(max_elements=n, ef_construction=100, M=16)
-    index.add_items(corpus_embeddings, list(range(n)))
-    index.set_ef(50)
-    labels, _ = index.knn_query(np.array([query_vec]), k=k)
-    return [doc_ids[i] for i in labels[0]]
-
-
-def run_search(algorithm, technique, dimension, query_id, query_embeddings_map,
-               corpus_embeddings, doc_ids):
+# ── Função de busca ────────────────────────────────────────────────────────────
+def run_search(algorithm, technique, dimension, query_id,
+               query_embeddings_map, doc_ids):
     query_vec = query_embeddings_map[query_id]
 
     start = time.perf_counter()
-    if algorithm == "annoy":
-        retrieved = search_annoy(query_vec, corpus_embeddings, doc_ids)
-    elif algorithm == "faiss":
-        retrieved = search_faiss(query_vec, corpus_embeddings, doc_ids, technique)
-    elif algorithm == "hnsw":
-        retrieved = search_hnsw(query_vec, corpus_embeddings, doc_ids)
-    latency = (time.perf_counter() - start) * 1000
 
+    if algorithm == "annoy":
+        index     = load_annoy_index(dimension)
+        indices   = index.get_nns_by_vector(query_vec.tolist(), 10)
+        retrieved = [doc_ids[i] for i in indices]
+
+    elif algorithm == "faiss":
+        index     = load_faiss_index(dimension, technique)
+        q         = np.array([query_vec], dtype="float32")
+        _, I      = index.search(q, 10)
+        retrieved = [doc_ids[i] for i in I[0] if i != -1]
+
+    elif algorithm == "hnsw":
+        index     = load_hnsw_index(dimension)
+        labels, _ = index.knn_query(np.array([query_vec]), k=10)
+        retrieved = [doc_ids[i] for i in labels[0]]
+
+    latency = (time.perf_counter() - start) * 1000
     return retrieved, latency
 
 
@@ -205,7 +196,6 @@ with tab1:
     st.title("🔍 Busca Semântica Interativa")
     st.markdown("Dataset: **SciFact** — artigos científicos com afirmações e evidências.")
 
-    # Carrega dados
     corpus  = load_corpus()
     queries = load_queries()
     qrels   = load_qrels()
@@ -216,7 +206,7 @@ with tab1:
 
     col1, col2 = st.columns([4, 1])
     with col1:
-        st.markdown(f"**Query selecionada:**")
+        st.markdown("**Query selecionada:**")
         st.info(queries[st.session_state.current_query_id])
     with col2:
         st.markdown("&nbsp;")
@@ -226,7 +216,7 @@ with tab1:
 
     st.divider()
 
-    # Configuração da busca
+    # Configuração
     st.subheader("Configuração")
     col1, col2, col3 = st.columns(3)
 
@@ -239,54 +229,46 @@ with tab1:
 
     st.divider()
 
-    # Botão de busca
+    # Busca
     if st.button("▶ Realizar Busca", type="primary", use_container_width=True):
-        with st.spinner("Construindo índice e realizando busca..."):
-            corpus_embeddings, doc_ids     = load_embeddings(dimension)
-            query_embeddings_map           = load_query_embeddings(dimension)
-            current_qid                    = st.session_state.current_query_id
+        current_qid = st.session_state.current_query_id
 
-            if current_qid not in query_embeddings_map:
-                st.error("Query não encontrada nos embeddings gerados.")
-            else:
+        _, doc_ids           = load_embeddings(dimension)
+        query_embeddings_map = load_query_embeddings(dimension)
+
+        if current_qid not in query_embeddings_map:
+            st.error("Query não encontrada nos embeddings gerados.")
+        else:
+            with st.spinner("Realizando busca..."):
                 retrieved, latency = run_search(
                     algorithm, technique, dimension,
-                    current_qid, query_embeddings_map,
-                    corpus_embeddings, doc_ids
+                    current_qid, query_embeddings_map, doc_ids
                 )
 
-                relevant = qrels.get(current_qid, set())
+            relevant = qrels.get(current_qid, set())
+            hits     = sum(1 for d in retrieved if d in relevant)
+            recall   = hits / len(relevant) if relevant else 0
 
-                # Métricas da busca
-                hits = sum(1 for d in retrieved if d in relevant)
-                recall = hits / len(relevant) if relevant else 0
+            # Métricas
+            st.subheader("Métricas da Busca")
+            col1, col2, col3 = st.columns(3)
+            col1.metric("Latência",  f"{latency:.2f} ms")
+            col2.metric("Recall@10", f"{recall * 100:.2f}%")
+            col3.metric("Acertos",   f"{hits} / {len(relevant)}")
 
-                st.subheader("Métricas da Busca")
-                col1, col2, col3 = st.columns(3)
-                col1.metric("Latência",  f"{latency:.2f} ms")
-                col2.metric("Recall@10", f"{recall * 100:.2f}%")
-                col3.metric("Acertos",   f"{hits} / {len(relevant)}")
+            st.divider()
 
-                st.divider()
+            # Resultados
+            st.subheader("Documentos Retornados")
+            for rank, doc_id in enumerate(retrieved, start=1):
+                is_relevant = doc_id in relevant
+                text        = corpus.get(doc_id, "Documento não encontrado.")
+                preview     = text[:300] + "..." if len(text) > 300 else text
 
-                # Resultados
-                st.subheader("Documentos Retornados")
-                for rank, doc_id in enumerate(retrieved, start=1):
-                    is_relevant = doc_id in relevant
-                    text        = corpus.get(doc_id, "Documento não encontrado.")
-                    preview     = text[:300] + "..." if len(text) > 300 else text
-
-                    if is_relevant:
-                        st.success(f"**#{rank} ✅ Relevante** — `{doc_id}`\n\n{preview}")
-                    else:
-                        st.error(f"**#{rank} ❌ Não relevante** — `{doc_id}`\n\n{preview}")
-
-                corpus_embeddings, doc_ids = load_embeddings(dimension)
-                query_embs = load_query_embeddings(dimension)
-
-                st.write(f"Corpus shape: {corpus_embeddings.shape}")
-                st.write(f"Query vec shape: {list(query_embs.values())[0].shape}")
-                st.write(f"Corpus normalizado: {np.allclose(np.linalg.norm(corpus_embeddings[:5], axis=1), 1.0)}")
+                if is_relevant:
+                    st.success(f"**#{rank} ✅ Relevante** — `{doc_id}`\n\n{preview}")
+                else:
+                    st.error(f"**#{rank} ❌ Não relevante** — `{doc_id}`\n\n{preview}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -300,7 +282,7 @@ with tab2:
     if df.empty:
         st.warning("Nenhum resultado encontrado em ./results/")
     else:
-        # ── Filtros ────────────────────────────────────────────────────────────
+        # Filtros
         st.subheader("Filtros")
         col1, col2, col3 = st.columns(3)
 
@@ -331,14 +313,12 @@ with tab2:
 
         st.divider()
 
-        # ── Gráfico Recall@10 por algoritmo e dimensão ─────────────────────────
+        # Gráfico Recall@10
         st.subheader("Recall@10 por Algoritmo e Dimensão")
 
         recall_df = df_filtered.groupby(
             ["Algoritmo", "Dimensão"], as_index=False
         )["Recall@10"].mean()
-        
-        recall_df["Dimensão"] = recall_df["Dimensão"].astype(str)
 
         fig_recall = px.bar(
             recall_df,
@@ -347,22 +327,23 @@ with tab2:
             color="Algoritmo",
             barmode="group",
             text_auto=".1f",
-            category_orders={"Dimensão": ["64", "128", "384"]},
+            labels={"Recall@10": "Recall@10 (%)", "Dimensão": "Dimensão"},
+            category_orders={"Dimensão": [64, 128, 384]},
             height=450,
         )
-
         fig_recall.update_layout(
-            bargap=0.05,
-            bargroupgap=0.0,
+            bargap=0.3,
+            bargroupgap=0.1,
+            yaxis=dict(range=[0, 100]),
+            legend=dict(orientation="h", yanchor="bottom", y=1.02,
+                        xanchor="right", x=1),
         )
-
-        fig_recall.update_traces(width=1)
-
+        fig_recall.update_traces(width=0.2)
         st.plotly_chart(fig_recall, use_container_width=True)
 
         st.divider()
 
-        # ── Gráfico Latência por algoritmo e técnica ───────────────────────────
+        # Gráfico Latência
         st.subheader("Latência P50 por Algoritmo e Técnica")
 
         latency_df = df_filtered.groupby(
@@ -380,20 +361,18 @@ with tab2:
             category_orders={"Técnica": ["FLAT", "IVF", "IVFPQ"]},
             height=450,
         )
-
         fig_latency.update_layout(
             bargap=0.3,
             bargroupgap=0.1,
-            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+            legend=dict(orientation="h", yanchor="bottom", y=1.02,
+                        xanchor="right", x=1),
         )
-
         fig_latency.update_traces(width=0.2)
-
         st.plotly_chart(fig_latency, use_container_width=True)
 
         st.divider()
 
-        # ── Tabela completa ────────────────────────────────────────────────────
+        # Tabela completa
         st.subheader("Tabela Completa de Resultados")
         st.dataframe(
             df_filtered.reset_index(drop=True),
@@ -401,7 +380,6 @@ with tab2:
             hide_index=True
         )
 
-        # Download da tabela
         csv = df_filtered.to_csv(index=False).encode("utf-8")
         st.download_button(
             label="⬇ Baixar CSV",
