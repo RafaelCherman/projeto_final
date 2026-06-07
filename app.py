@@ -206,13 +206,14 @@ with tab1:
 
     col1, col2 = st.columns([4, 1])
     with col1:
-        st.markdown("**Query selecionada:**")
-        st.info(queries[st.session_state.current_query_id])
-    with col2:
         st.markdown("&nbsp;")
         if st.button("🔀 Nova query", use_container_width=True):
             st.session_state.current_query_id = random.choice(list(queries.keys()))
             st.rerun()
+    with col2:
+        st.markdown("**Query selecionada:**")
+        st.info(queries[st.session_state.current_query_id])
+        
 
     st.divider()
 
@@ -249,7 +250,13 @@ with tab1:
             hits     = sum(1 for d in retrieved if d in relevant)
             recall   = hits / len(relevant) if relevant else 0
 
-            
+
+            # Métricas
+            st.subheader("Métricas da Busca")
+            col1, col2, col3 = st.columns(3)
+            col1.metric("Latência",  f"{latency:.2f} ms")
+            col2.metric("Recall@10", f"{recall * 100:.2f}%")
+            col3.metric("Acertos",   f"{hits} / {len(relevant)}")            
 
             st.divider()
 
@@ -330,7 +337,7 @@ with tab2:
         )
         
         fig_recall.update_layout(
-            bargap=0.15,      # Diminui o espaçamento geral entre os grupos (64, 128, 384)
+            bargap=0.3,      # Diminui o espaçamento geral entre os grupos (64, 128, 384)
             bargroupgap=0.05, # Diminui o espaçamento entre as colunas do mesmo grupo
             yaxis=dict(range=[0, 100]),
             legend=dict(orientation="h", yanchor="bottom", y=1.02,
