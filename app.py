@@ -10,7 +10,6 @@ import plotly.express as px
 # ── Configuração da página ─────────────────────────────────────────────────────
 st.set_page_config(
     page_title="ANN Semantic Search",
-    page_icon="🔍",
     layout="wide"
 )
 
@@ -186,14 +185,14 @@ def run_search(algorithm, technique, dimension, query_id,
 
 
 # ── Abas ───────────────────────────────────────────────────────────────────────
-tab1, tab2 = st.tabs(["🔍 Busca Interativa", "📊 Dashboard de Resultados"])
+tab1, tab2 = st.tabs(["Busca Interativa", "Dashboard de Resultados"])
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ABA 1 — BUSCA INTERATIVA
 # ══════════════════════════════════════════════════════════════════════════════
 with tab1:
-    st.title("🔍 Busca Semântica Interativa")
+    st.title("Busca Semântica Interativa")
     st.markdown("Dataset: **SciFact** — artigos científicos com afirmações e evidências.")
 
     corpus  = load_corpus()
@@ -207,7 +206,7 @@ with tab1:
     col1, col2 = st.columns([1, 4])
     with col1:
         st.markdown("&nbsp;")
-        if st.button("🔀 Nova query", use_container_width=True):
+        if st.button("Nova query", use_container_width=True):
             st.session_state.current_query_id = random.choice(list(queries.keys()))
             st.rerun()
     with col2:
@@ -231,7 +230,7 @@ with tab1:
     st.divider()
 
     # Busca
-    if st.button("▶ Realizar Busca", type="primary", use_container_width=True):
+    if st.button("Realizar Busca", type="primary", use_container_width=True):
         current_qid = st.session_state.current_query_id
 
         _, doc_ids           = load_embeddings(dimension)
@@ -249,7 +248,7 @@ with tab1:
             relevant = qrels.get(current_qid, set())
             if not relevant:
                 st.warning(
-                    "⚠️ Esta query não possui documentos relevantes anotados no gabarito. "
+                    "Esta query não possui documentos relevantes anotados no gabarito. "
                     "Os resultados abaixo são os documentos mais próximos semanticamente, "
                     "mas não é possível avaliar se são corretos."
                 )
@@ -298,7 +297,7 @@ with tab1:
 # ABA 2 — DASHBOARD
 # ══════════════════════════════════════════════════════════════════════════════
 with tab2:
-    st.title("📊 Dashboard de Resultados")
+    st.title("Dashboard de Resultados")
 
     df = load_all_results()
 
