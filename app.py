@@ -337,8 +337,8 @@ with tab2:
         )
         
         fig_recall.update_layout(
-            bargap=0.5,      # Diminui o espaçamento geral entre os grupos (64, 128, 384)
-            bargroupgap=0.05, # Diminui o espaçamento entre as colunas do mesmo grupo
+            bargap=0.4,      # Diminui o espaçamento geral entre os grupos (64, 128, 384)
+            bargroupgap=0.1, # Diminui o espaçamento entre as colunas do mesmo grupo
             yaxis=dict(range=[0, 100]),
             legend=dict(orientation="h", yanchor="bottom", y=1.02,
                         xanchor="right", x=1),
