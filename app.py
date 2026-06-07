@@ -247,6 +247,12 @@ with tab1:
                 )
 
             relevant = qrels.get(current_qid, set())
+            if not relevant:
+                st.warning(
+                    "⚠️ Esta query não possui documentos relevantes anotados no gabarito. "
+                    "Os resultados abaixo são os documentos mais próximos semanticamente, "
+                    "mas não é possível avaliar se são corretos."
+                )
             hits     = sum(1 for d in retrieved if d in relevant)
 
             # Posição do primeiro documento relevante
