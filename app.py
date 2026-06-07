@@ -204,7 +204,7 @@ with tab1:
     if "current_query_id" not in st.session_state:
         st.session_state.current_query_id = random.choice(list(queries.keys()))
 
-    col1, col2 = st.columns([4, 1])
+    col1, col2 = st.columns([1, 4])
     with col1:
         st.markdown("&nbsp;")
         if st.button("🔀 Nova query", use_container_width=True):
@@ -337,7 +337,7 @@ with tab2:
         )
         
         fig_recall.update_layout(
-            bargap=0.3,      # Diminui o espaçamento geral entre os grupos (64, 128, 384)
+            bargap=0.5,      # Diminui o espaçamento geral entre os grupos (64, 128, 384)
             bargroupgap=0.05, # Diminui o espaçamento entre as colunas do mesmo grupo
             yaxis=dict(range=[0, 100]),
             legend=dict(orientation="h", yanchor="bottom", y=1.02,
