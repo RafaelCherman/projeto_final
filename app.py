@@ -269,6 +269,8 @@ with tab1:
                     st.success(f"**#{rank} ✅ Relevante** — `{doc_id}`\n\n{preview}")
                 else:
                     st.error(f"**#{rank} ❌ Não relevante** — `{doc_id}`\n\n{preview}")
+            
+            st.caption(f"Documentos relevantes no gabarito: {len(relevant)}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
