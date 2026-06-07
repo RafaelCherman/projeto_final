@@ -248,15 +248,28 @@ with tab1:
 
             relevant = qrels.get(current_qid, set())
             hits     = sum(1 for d in retrieved if d in relevant)
-            recall   = hits / len(relevant) if relevant else 0
 
+            # Posição do primeiro documento relevante
+            first_hit_position = None
+            for rank, doc_id in enumerate(retrieved, start=1):
+                if doc_id in relevant:
+                    first_hit_position = rank
+                    break
 
-            # Métricas
-            st.subheader("Métricas da Busca")
-            col1, col2, col3 = st.columns(3)
-            col1.metric("Latência",  f"{latency:.2f} ms")
-            col2.metric("Recall@10", f"{recall * 100:.2f}%")
-            col3.metric("Acertos",   f"{hits} / {len(relevant)}")            
+            # Mensagem de resultado em linguagem natural
+            st.subheader("Resultado da Busca")
+
+            if first_hit_position is not None:
+                st.success(
+                    f"✅ O documento esperado foi encontrado na posição "
+                    f"**#{first_hit_position}** de 10 resultados — "
+                    f"Busca concluída em **{latency:.2f}ms**"
+                )
+            else:
+                st.error(
+                    f"❌ O documento esperado não apareceu nos 10 resultados — "
+                    f"Busca concluída em **{latency:.2f}ms**"
+                )
 
             st.divider()
 
