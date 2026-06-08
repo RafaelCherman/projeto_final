@@ -4,13 +4,13 @@
 
 ### `experiments/`
 
-- **`metrics.py`** — Módulo compartilhado entre os algoritmos. Contém as funções de carregamento de dados, monitoramento de CPU e memória, cálculo de Recall@k e MRR, medição de latência e salvamento dos resultados em JSON.
+- **`metrics.py`** - Módulo compartilhado entre os algoritmos. Contém as funções de carregamento de dados, monitoramento de CPU e memória, cálculo de Recall@k e MRR, medição de latência e salvamento dos resultados em JSON.
 
-- **`annoy_experiment.py`** — Script de experimento do algoritmo Annoy. Constrói o índice com estrutura de árvores aleatórias e executa as buscas sobre os três datasets nas três dimensões de embeddings.
+- **`annoy_experiment.py`** - Script de experimento do algoritmo Annoy. Constrói o índice com estrutura de árvores aleatórias e executa as buscas sobre os três datasets nas três dimensões de embeddings.
 
-- **`faiss_experiment.py`** — Script de experimento do algoritmo FAISS. Avalia três técnicas de indexação: busca exata (Flat), clustering (IVF) e clustering com compressão (IVF+PQ), sobre os três datasets e dimensões.
+- **`faiss_experiment.py`** - Script de experimento do algoritmo FAISS. Avalia três técnicas de indexação: busca exata (Flat), clustering (IVF) e clustering com compressão (IVF+PQ), sobre os três datasets e dimensões.
 
-- **`hnsw_experiment.py`** — Script de experimento do algoritmo HNSW. Constrói o índice com estrutura de grafo hierárquico e executa as buscas sobre os três datasets nas três dimensões de embeddings.
+- **`hnsw_experiment.py`** - Script de experimento do algoritmo HNSW. Constrói o índice com estrutura de grafo hierárquico e executa as buscas sobre os três datasets nas três dimensões de embeddings.
 
 ---
 
@@ -28,7 +28,7 @@ JSONs gerados pelos experimentos, organizados por algoritmo e nível de recurso 
 
 ### `results_consolidated/`
 
-Três arquivos `.txt` — um por algoritmo — reunindo todos os resultados de cada algoritmo em um único documento de fácil leitura.
+Três arquivos `.txt` um por algoritmo, reunindo todos os resultados de cada algoritmo em um único documento de fácil leitura.
 
 ---
 
@@ -52,7 +52,7 @@ Script de pré-construção dos índices ANN para o protótipo. Deve ser executa
 
 ### `consolidate_results.py`
 
-Lê todos os JSONs de resultados e consolida em três arquivos `.txt` — um por algoritmo — salvos em `results_consolidated/`.
+Lê todos os JSONs de resultados e consolida em três arquivos `.txt` um por algoritmo, salvos em `results_consolidated/`.
 
 ---
 
